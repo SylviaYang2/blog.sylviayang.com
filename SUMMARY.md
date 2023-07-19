@@ -4,4 +4,4 @@
 
 ## 数据结构 Data Structures
 
-* [Page 1](shu-ju-jie-gou-data-structures/page-1.md)
+* [Page 1](数据结构-data-structures/page-1.md)
