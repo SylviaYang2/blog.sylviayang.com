@@ -10,7 +10,7 @@ Full Binary Tree：深度为k，有2^k - 1个节点的树；除叶子节点外�
 
 Complete Binary Tree：若二叉树的深度为h，除第h层外，其他各层（1 ～ h-1）的节点数都达到最大个数，第h层所有的节点都连续集中在最左边
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (3).png>)
 
 
 
@@ -25,7 +25,7 @@ Complete Binary Tree：若二叉树的深度为h，除第h层外，其他各层�
 
 ### Operations: Search, Insert, Delete
 
-1. Search：
+1. **Search**：
 
 ```
 class Solution {
@@ -44,7 +44,7 @@ class Solution {
 }
 ```
 
-2. Insert：
+2. **Insert**：
 
 ```
 class Solution {
@@ -64,14 +64,121 @@ class Solution {
 }
 ```
 
-1. Delete：
-2.
-3.
-4. 如果目标节点没有子节点，我们可以直接移除该目标节点。
-5. 如果目标节只有一个子节点，我们可以用其子节点作为替换。
-6. 如果目标节点有两个子节点，我们需要用其中序后继节点或者前驱节点来替换，再删除该目标节点。
+3. **Delete**：
+
+* 如果目标节点没有子节点，我们可以直接移除该目标节点。
+* 如果目标节只有一个子节点，我们可以用其子节点作为替换。
+* 如果目标节点有两个子节点，我们需要用其中序后继节点或者前驱节点来替换，再删除该目标节点。
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+{% code overflow="wrap" %}
+```
+两种方法：
+       4
+     /   \
+    2     6
+   / \   / \
+  1   3 5   7
+  
+方法1:可能增加树的高度：
+如果目标节点大于当前节点值，则去右子树中删除；
+如果目标节点小于当前节点值，则去左子树中删除；
+如果目标节点就是当前节点，分为以下三种情况：
+其无左子：其右子顶替其位置，删除了该节点；
+其无右子：其左子顶替其位置，删除了该节点；
+其左右子节点都有：其左子树转移到其右子树的最左节点的左子树上，然后右子树顶替其位置，由此删除了该节点。
+
+// 方法1，可能会增加树的高度
+ public TreeNode deleteNode(TreeNode root, int key) {
+     if (root == null) {
+         return null;
+     }
+     // 如果key小于root，去左子树删除
+     if (key < root.val) {
+         root.left = deleteNode(root.left, key);
+     } else if (key > root.val) { // 如果key大于root，去右子树删除
+         root.right = deleteNode(root.right, key);
+     } else { // 该node是要删除的key
+         if (root.left == null) { // 该node无左子树
+             return root.right;
+         } else if (root.right == null) { // 该node无左子树
+             return root.left;
+         } else { // 左右子树都有: 把左子树挂到右子树的最左node下面
+             TreeNode node = root.right;
+             while (node.left != null) {
+                 node = node.left;
+             }
+             node.left = root.left;
+             return root.right;
+         }
+     }
+
+     return root;
+ }
+
+
+
+方法2: 不会增加树的高度
+如果目标节点没有子节点，我们可以直接移除该目标节点。
+如果目标节只有一个子节点，我们可以用其子节点作为替换。
+如果目标节点有两个子节点，我们需要用其中序后继节点（右子树的最小值）或者前驱节点（左子树的最大值）来替换（中序遍历BST返回的是有序数组），再删除该目标节点。
+
+// 获取该node在有序数组里的下一个值
+private int getNextValue(TreeNode node) {
+    TreeNode right = node.right;
+    while (right.left != null) {
+        right = right.left;
+    }
+    return right.val;
+}
+
+// 获取该node在有序数组里的上一个值
+private int getPreValue(TreeNode node) {
+    TreeNode left = node.left;
+    while (left.right != null) {
+        left = left.right;
+    }
+    return left.val;
+}
+
+
+// 方法2：不会增加树的高度：
+public TreeNode deleteNode(TreeNode root, int key) {
+    if (root == null) {
+        return null;
+    }
+
+    // 如果key小于root，去左子树删除
+    if (key < root.val) {
+        root.left = deleteNode(root.left, key);
+    } else if (key > root.val) { // 如果key大于root，去右子树删除
+        root.right = deleteNode(root.right, key);
+    } else { // 该node是要删除的key
+        if (root.left == null && root.right == null) { // 如果无左子树也无右子树，则直接删除当前节点
+            root = null;
+        } else if (root.right != null) {
+            int nextVal = getNextValue(root);
+            root.val = nextVal; // 用下一节点（右子树的最左节点）替换当前节点
+            root.right = deleteNode(root.right, nextVal); // 去右子树上将替换的节点删除
+        } else {
+            int preVal = getPreValue(root);
+            root.val = preVal; // 用上一节点（左子树的最右节点）替换当前节点
+            root.left = deleteNode(root.left, preVal); // 去左子树上将替换的节点删除
+        }
+    }
+
+    return root;
+}
 
 ```
-```
+{% endcode %}
 
-![](<../.gitbook/assets/image (3).png>)
+Q:
+
+
+
+
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
