@@ -6,7 +6,7 @@ description: String
 
 ### Java
 
-```
+```java
 String s1 = new String();
 String s2 = "sylvia";
 int len2 = s2.length();

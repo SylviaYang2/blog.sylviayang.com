@@ -6,11 +6,11 @@
 
 Full Binary Tree：深度为k，有2^k - 1个节点的树；除叶子节点外的所有节点都有两个子节点，节点数达到最大值；所有叶子节点在同一层上。
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (64).png>)
 
 Complete Binary Tree：若二叉树的深度为h，除第h层外，其他各层（1 ～ h-1）的节点数都达到最大个数，第h层所有的节点都连续集中在最左边
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (96).png>)
 
 
 
@@ -27,7 +27,7 @@ Complete Binary Tree：若二叉树的深度为h，除第h层外，其他各层�
 
 1. **Search**：
 
-```
+```java
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
         if (root == null) {
@@ -46,7 +46,7 @@ class Solution {
 
 2. **Insert**：
 
-```
+```java
 class Solution {
     public TreeNode insertIntoBST(TreeNode root, int val) {
         if (root == null) {
@@ -70,10 +70,10 @@ class Solution {
 * 如果目标节只有一个子节点，我们可以用其子节点作为替换。
 * 如果目标节点有两个子节点，我们需要用其中序后继节点或者前驱节点来替换，再删除该目标节点。
 
-<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (67).png" alt=""><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
-```
+```java
 两种方法：
        4
      /   \
@@ -174,11 +174,11 @@ public TreeNode deleteNode(TreeNode root, int key) {
 ```
 {% endcode %}
 
-Q:
+**Q: 为什么需要root.left = deleteNode(root.left, key) 来接收返回值，而不是直接执行没有返回值的deleteNode？**
+
+**A：因为一般的删除操作，通过改变root下面连接的节点，达到删除的效果，而这里root.left = 想要返回的节点，如果返回的不是原左节点，则达到了删除root的效果。**
 
 
 
-
-
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
 
