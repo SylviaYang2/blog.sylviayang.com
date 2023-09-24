@@ -2,7 +2,7 @@
 
 ### Java Implementation
 
-```
+```java
 public class ListNode {
     public int val;
     public ListNode next;
@@ -27,7 +27,7 @@ Dummy Node一般指向head，dummy -> head，防止head node丢失；
 
 1. Reverse 反转链表
 
-```
+```java
 1 -> 2 -> 3 -> null   -->   3 -> 2 -> 1 -> null
 
          1   ->   2   ->   3   ->  null
@@ -68,7 +68,7 @@ public ListNode reverse(ListNode head) {
 * curr.prev和curr.next的交换
 * head的递推（curr相当于head的dummy node）
 
-```
+```java
 class DListNode {
     int val;
     DListNode prev, next;
@@ -102,7 +102,7 @@ fast和slow都指向head node，fast的移动速度是slow的2倍
   * 奇数长度：如果fast=null时，slow在链表中间节点
 * 判断linkedlist是否有环：如果fast=null，则此链表无环；如果fast=slow，则快指针追上慢指针，此链表有环。
 
-```
+```java
 public boolean hasCircle(ListNode head) {
     ListNode slow = head;
     ListNode fast = head;
