@@ -6,7 +6,7 @@
 
 `ListNode reverseN(ListNode head, int n)`
 
-<figure><img src="../../../.gitbook/assets/image (100).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (111).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### 思路：
 

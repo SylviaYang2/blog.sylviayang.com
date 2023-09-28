@@ -1,8 +1,8 @@
 # 206. Reverse Linked List (Easy)
 
-<figure><img src="../../../../.gitbook/assets/image (52).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (63).png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/image (60).png" alt="" width="317"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (71).png" alt="" width="317"><figcaption></figcaption></figure>
 
 ### 方法一：Recursion
 
@@ -27,9 +27,9 @@ public ListNode reverseList(ListNode head) {
 }
 ```
 
-![](<../../../../.gitbook/assets/image (71).png>)![](<../../../../.gitbook/assets/image (92).png>)
+![](<../../../../.gitbook/assets/image (82).png>)![](<../../../../.gitbook/assets/image (103).png>)
 
-![](<../../../../.gitbook/assets/image (116).png>)![](<../../../../.gitbook/assets/image (79).png>)
+![](<../../../../.gitbook/assets/image (127).png>)![](<../../../../.gitbook/assets/image (90).png>)
 
 ### 时间复杂度
 

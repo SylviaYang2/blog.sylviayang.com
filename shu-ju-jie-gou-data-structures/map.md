@@ -21,4 +21,4 @@ for (Map.Entry<String, Integer> entry: map.entrySet()) {
 }
 ```
 
-<figure><img src="../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
