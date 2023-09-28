@@ -18,3 +18,5 @@
 86.[Partition List](two-pointers/86.-partition-list-medium.md)
 
 92.[Reverse Linked List II (Medium)](recursion/92.-reverse-linked-list-ii-medium.md) (iterative solution)
+
+24\. [Swap Nodes in Pairs](../../meta-facebook/24.-swap-nodes-in-pairs.md)

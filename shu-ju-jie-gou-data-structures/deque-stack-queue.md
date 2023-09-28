@@ -1,8 +1,8 @@
 # Deque/Stack/Queue
 
-<figure><img src="../.gitbook/assets/image (90).png" alt="" width="346"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (101).png" alt="" width="346"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (51).png" alt="" width="320"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (62).png" alt="" width="320"><figcaption></figcaption></figure>
 
 **为什么不推荐使用Stack？**&#x20;
 
@@ -19,16 +19,16 @@ Deque<TreeNode> stack = new LinkedList<>();
 Deque<TreeNode> stack = new ArrayDeque<>();
 ```
 
-<figure><img src="../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
 
 ### Queue
 
-<figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
 
 ### Deque方法
 
-<figure><img src="../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (105).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (86).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>

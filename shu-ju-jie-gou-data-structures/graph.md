@@ -6,14 +6,14 @@
 2. 无向图
 3. 加权图
 
-<figure><img src="../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
 
 
 ### 表示图的两种方式：邻接矩阵 / 邻接表
 
-<figure><img src="../.gitbook/assets/image (106).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (117).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (95).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (104).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (115).png" alt=""><figcaption></figcaption></figure>
