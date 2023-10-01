@@ -1,8 +1,8 @@
 # 48. Rotate Image (Medium)
 
-<figure><img src="../../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 ### 难点：in-place rotation
 
@@ -11,9 +11,9 @@
 1. Transpose the matrix
 2. Reverse Columns
 
-![](<../../../../.gitbook/assets/image (47).png>)![](<../../../../.gitbook/assets/image (48).png>)
+![](<../../../../.gitbook/assets/image (49).png>)![](<../../../../.gitbook/assets/image (50).png>)
 
-![](<../../../../.gitbook/assets/image (49).png>)
+![](<../../../../.gitbook/assets/image (51).png>)
 
 ```java
 class Solution {

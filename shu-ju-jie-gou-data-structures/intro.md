@@ -1,3 +1,3 @@
 # Intro
 
-![](<../.gitbook/assets/image (104).png>)
+![](<../.gitbook/assets/image (106).png>)
