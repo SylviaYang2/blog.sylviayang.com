@@ -4,19 +4,13 @@
    * **相向**：
      * [344.Reverse String](344.-reverse-string.md)
    * **同向**
-   * **背向**
-     * 由中心向两端扩展：**寻找**palindrome -> [5. longest palindromic substring](5.-longest-palindromic-substring-medium.md)
+   * **Interview Tip**: Whenever you're trying to solve an array problem **in-place**, always consider the possibility of iterating **backwards** instead of forwards through the array. It can completely change the problem, and make it a lot easier.
 
-```java
-// 以s[left]和s[right]为中心的最长palindrome
-private String palindrome(String s, int left, int right) {
-    while (left >= 0 && right < s.length && s.charAt(left) == s.charAt(right) {
-        left--;
-        right++;
-    }
-    return s.substring(left + 1, right);
-}
-```
+{% content-ref url="88.-merge-sorted-array-easy-but-i-consider-it-as-a-medium.md" %}
+[88.-merge-sorted-array-easy-but-i-consider-it-as-a-medium.md](88.-merge-sorted-array-easy-but-i-consider-it-as-a-medium.md)
+{% endcontent-ref %}
+
+*   **背向**
 
 
 
