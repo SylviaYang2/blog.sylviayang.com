@@ -1,6 +1,6 @@
 # Extension: Rotate Image 90 degrees Counterclockwise
 
-<figure><img src="../../../../.gitbook/assets/image (34) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (34) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ### 思路：Mirror the matrix along the other diagonal
 
