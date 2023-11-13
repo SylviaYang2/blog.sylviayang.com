@@ -1,5 +1,9 @@
 # Binary Tree
 
+{% embed url="https://labuladong.github.io/algo/di-ling-zh-bfe1b/dong-ge-da-334dd/" %}
+
+
+
 1. BFS - Level Order Traversal
 
 Solution 1:// 输入一棵二叉树的根节点，层序遍历这棵二叉树void levelTraverse(TreeNode root) {if (root == null) return;Queue\<TreeNode> q = new LinkedList<>();List\<List\<Integer>> wrapList = new LinkedList<>();q.offer(root);\
