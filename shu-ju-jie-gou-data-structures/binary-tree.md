@@ -1,5 +1,7 @@
 # Binary Tree
 
+
+
 1. Binary Tree的第i层最多有2^(i-1)个节点；
 2. 深度为k的Binary Tree至多有2^k - 1个节点；
 3.
@@ -69,6 +71,10 @@ class Solution {
 * 如果目标节点没有子节点，我们可以直接移除该目标节点。
 * 如果目标节只有一个子节点，我们可以用其子节点作为替换。
 * 如果目标节点有两个子节点，我们需要用其中序后继节点或者前驱节点来替换，再删除该目标节点。
+
+{% content-ref url="../coding/linkedlist/two-pointers/160.-intersection-of-two-linked-lists-easy.md" %}
+[160.-intersection-of-two-linked-lists-easy.md](../coding/linkedlist/two-pointers/160.-intersection-of-two-linked-lists-easy.md)
+{% endcontent-ref %}
 
 <figure><img src="../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
 
@@ -181,4 +187,8 @@ public TreeNode deleteNode(TreeNode root, int key) {
 
 
 <figure><img src="../.gitbook/assets/image (128).png" alt=""><figcaption></figcaption></figure>
+
+{% content-ref url="../coding/array/two-pointers/" %}
+[two-pointers](../coding/array/two-pointers/)
+{% endcontent-ref %}
 

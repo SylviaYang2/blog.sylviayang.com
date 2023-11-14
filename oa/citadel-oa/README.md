@@ -4,17 +4,17 @@
 
 
 
-<figure><img src="../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (12).png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/221320v2pggpwmwuycoyps.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/221320v2pggpwmwuycoyps.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 
 
-<figure><img src="../../.gitbook/assets/241440cv6xkmoytgrgtqp.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/241440cv6xkmoytgrgtqp.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/24146zlyw6ehq8wtvqiwg.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/24146zlyw6ehq8wtvqiwg.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/24154zem9jxnc89nqbawc.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/24154zem9jxnc89nqbawc.jpg" alt="" width="375"><figcaption></figcaption></figure>
 
 
 
@@ -60,6 +60,6 @@
 
 
 
-<figure><img src="../../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (59).png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (60).png" alt="" width="375"><figcaption></figcaption></figure>
