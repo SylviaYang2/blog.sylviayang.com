@@ -110,6 +110,7 @@
       * [Extension: Rotate Image 90 degrees Counterclockwise](coding/array/2d-array-traversal-techniques/48.-rotate-image-medium/extension-rotate-image-90-degrees-counterclockwise.md)
     * [151. Reverse Words in a String (Medium)](coding/array/2d-array-traversal-techniques/151.-reverse-words-in-a-string-medium.md)
 * [Math](coding/math/README.md)
+  * [202. Happy Number (Easy)](coding/math/202.-happy-number-easy.md)
   * [780. Reaching Points (Hard)](coding/math/780.-reaching-points-hard.md)
 * [Input Size V.S. Time Complexity](coding/input-size-v.s.-time-complexity.md)
 
@@ -124,3 +125,4 @@
 * [IBM OA](oa/ibm-oa/README.md)
   * [IBM OA SQL](oa/ibm-oa/ibm-oa-sql.md)
 * [TikTok OA](oa/tiktok-oa.md)
+* [JP Morgan OA](oa/jp-morgan-oa.md)
