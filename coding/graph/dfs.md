@@ -6,6 +6,10 @@
 
     The code in the pre-order position can only obtain the data passed by the parent node from the function parameters, and the code in the post-order position can not only obtain the parameter data, but also the data passed back by the subtree through the function return value.
 
+<figure><img src="../../.gitbook/assets/image (7).png" alt="" width="375"><figcaption></figcaption></figure>
+
+2. **前序遍历的代码在进入某一个节点之前的那个时间点执行，后序遍历代码在离开某个节点之后的那个时间点执行**。
+
 ### Pre-Order Traversal
 
 **Recursive:**
