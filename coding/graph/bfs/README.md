@@ -56,7 +56,7 @@ public List<List<Integer>> levelOrderBottom(TreeNode root) {
     }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Visited:
 

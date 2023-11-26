@@ -2,6 +2,18 @@
 
 {% embed url="https://labuladong.github.io/algo/di-ling-zh-bfe1b/hui-su-sua-c26da/" %}
 
+{% embed url="https://programmercarl.com/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html#%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80" %}
+
+回溯法，一般可以解决如下几种问题：
+
+* 组合问题：N个数里面按一定规则找出k个数的集合
+* 切割问题：一个字符串按一定规则有几种切割方式
+* 子集问题：一个N个数的集合里有多少符合条件的子集
+* 排列问题：N个数按一定规则全排列，有几种排列方式
+* 棋盘问题：N皇后，解数独等等
+
+<figure><img src="../.gitbook/assets/image (10).png" alt="" width="375"><figcaption></figcaption></figure>
+
 站在回溯树的一个节点上，你只需要思考 3 个问题：
 
 1、路径：也就是已经做出的选择。
@@ -24,13 +36,17 @@ def backtrack(路径, 选择列表):
 
 ```
 
+for循环就是遍历集合区间，可以理解一个节点有多少个孩子，这个for循环就执行多少次。
+
+backtracking这里自己调用自己，实现递归。
+
+从图中：**for循环可以理解是横向遍历，backtracking（递归）就是纵向遍历**，这样就把这棵树全遍历完了，一般来说，搜索叶子节点就是找的其中一个结果了。
+
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
 {% content-ref url="array/backtracking/46.-permutations-medium.md" %}
 [46.-permutations-medium.md](array/backtracking/46.-permutations-medium.md)
 {% endcontent-ref %}
-
-
-
-
 
 
 
