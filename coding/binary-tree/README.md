@@ -1,36 +1,73 @@
 # Binary Tree
 
-{% embed url="https://labuladong.github.io/algo/di-ling-zh-bfe1b/dong-ge-da-334dd/" %}
+### 1. 前/中/后序和二叉树的唯一性
+
+**什么样的序列化的数据可以反序列化出唯一的一棵二叉树**？
+
+举例来说，如果我给你这样一个不包含空指针的前序遍历结果 `[1,2,3,4,5]`，那么如下两棵二叉树都是满足这个前序遍历结果的：
+
+![](https://labuladong.github.io/algo/images/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BA%8F%E5%88%97%E5%8C%96/dup-preorder.jpg)
+
+所以给定不包含空指针信息的前序遍历结果，是不能还原出唯一的一棵二叉树的。
+
+但如果我的前序遍历结果包含空指针的信息，那么就能还原出唯一的一棵二叉树了。比如说用 `#` 表示空指针，上图左侧的二叉树的前序遍历结果就是 `[1,2,3,#,#,4,#,#,5,#,#]`，上图右侧的二叉树的前序遍历结果就是 `[1,2,#,3,#,#,4,5,#,#,#]`，它俩就区分开了。
+
+因为前序/后序遍历的结果中，可以确定根节点的位置，而中序遍历的结果中，根节点的位置是无法确定的。更直观的，比如如下两棵二叉树显然拥有不同的结构，但它俩的中序遍历结果都是 `[#,1,#,1,#]`，无法区分：
+
+![](https://labuladong.github.io/algo/images/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BA%8F%E5%88%97%E5%8C%96/dup-inorder.jpg)
+
+说了这么多，总结下结论，**当二叉树中节点的值不存在重复时**：
+
+1. 如果你的序列化结果中**不包含空指针的信息**，且你只给出**一种**遍历顺序，那么你无法还原出唯一的一棵二叉树。
+2.  如果你的序列化结果中**不包含空指针的信息**，且你会给出**两种**遍历顺序，那么按照前文 [东哥手把手带你刷二叉树（构造篇）](https://labuladong.github.io/algo/di-yi-zhan-da78c/shou-ba-sh-66994/dong-ge-da-172f0/) 所说，分两种情况：
+
+    2.1. 如果你给出的是前序和中序，或者后序和中序，那么你可以还原出唯一的一棵二叉树。
+
+    2.2. 如果你给出前序和后序，那么你无法还原出唯一的一棵二叉树。
+3.  如果你的序列化结果中**包含空指针的信息**，且你只给出**一种**遍历顺序，也要分两种情况：
+
+    3.1. 如果你给出的是前序或者后序，那么你可以还原出唯一的一棵二叉树。
+
+    3.2. 如果你给出的是中序，那么你无法还原出唯一的一棵二叉树。
+
+{% content-ref url="297.-serialize-and-deserialize-binary-tree-hard.md" %}
+[297.-serialize-and-deserialize-binary-tree-hard.md](297.-serialize-and-deserialize-binary-tree-hard.md)
+{% endcontent-ref %}
 
 
 
-1. BFS - Level Order Traversal
-
-Solution 1:// 输入一棵二叉树的根节点，层序遍历这棵二叉树void levelTraverse(TreeNode root) {if (root == null) return;Queue\<TreeNode> q = new LinkedList<>();List\<List\<Integer>> wrapList = new LinkedList<>();q.offer(root);\
-// 从上到下遍历二叉树的每一层while (!q.isEmpty()) {int sz = q.size();List\<Integer> subList = new LinkedList<>();// 从左到右遍历每一层的每个节点for (int i = 0; i < sz; i++) {TreeNode cur = q.poll();subList.add(cur.val);// 将下一层节点放入队列if (cur.left != null) {q.offer(cur.left);}if (cur.right != null) {q.offer(cur.right);\}}wrapList.add(subList);\}}\
-![](https://en-cache/tokenKey%3D%22AuthToken%3AUser%3A231576898%22+a96b81ee-a63d-6750-a045-8da18106cdfc+ed3971ef100e9b4046b9daedbf7bef00+https://www.evernote.com/shard/s742/res/3aef06c7-6ea3-3103-f504-6f229230ccf5)Solution 2:public List\<List\<Integer>> levelOrderBottom(TreeNode root) {List\<List\<Integer>> res = new LinkedList<>();// Solution 2levelHelper(root, 0, res);return res;}private void levelHelper(TreeNode root, int depth, List\<List\<Integer>> res) {if (root == null) {return;}if (depth == res.size()) {res.add(new LinkedList\<Integer>());}res.get(depth).add(root.val);levelHelper(root.left, depth + 1, res);levelHelper(root.right, depth + 1, res);}\
 
 
-2. Pre-Order Traversal
+### 2. 二叉树（Binary Tree）和二叉搜索树（Binary Search Tree，BST）
 
-Solution 1:class Solution {public List\<Integer> preorderTraversal(TreeNode root) {List\<Integer> res = new LinkedList<>();if (root == null) {return res;}res.add(root.val);res.addAll(preorderTraversal(root.left));res.addAll(preorderTraversal(root.right));return res;}\
-// Orpublic List\<Integer> preorderTraversal(TreeNode root) {List\<Integer> res = new LinkedList<>();traverse(root, res);return res;}private void traverse(TreeNode root, List\<Integer> res) {if (root == null) {return;}res.add(root.val);traverse(root.left);traverse(root.right);}\
-Solution 2:class Solution {public List\<Integer> preorderTraversal(TreeNode root) {List\<Integer> res = new LinkedList<>();Deque\<TreeNode> stack = new LinkedList<>();stack.push(root);while (!stack.isEmpty()) {TreeNode node = stack.pop();if (node != null) {res.add(node.val);stack.push(node.right);stack.push(node.left);\}}return res;\}}
+#### 1. 二叉树（Binary Tree）：
 
-3. In-Order Traversal
+* **定义：** 二叉树是一种树结构，其中每个节点最多有两个子节点，分别称为左子节点和右子节点。
+* **特性：**
+  * 每个节点最多有两个子节点，左子节点和右子节点。
+  * 二叉树可以是空树，即不包含任何节点。
+  * 一个节点的子节点的相对位置没有特定的顺序，即左右子节点的顺序可以颠倒。
 
-class Solution {public List\<Integer> inorderTraversal(TreeNode root) {List\<Integer> result = new LinkedList<>();traverse(root, result);return result;}private void traverse(TreeNode root, List\<Integer> res) {if (root == null) {return;}traverse(root.left, res);res.add(root.val);traverse(root.right, res);\}}
+#### 2. 二叉搜索树（Binary Search Tree，BST）：
 
-4. Post-Order Traversal
+* **定义：** 二叉搜索树是一种二叉树，其每个节点都具有以下性质：
+  * 左子树中所有节点的值都小于根节点的值。
+  * 右子树中所有节点的值都大于根节点的值。
+  * 左右子树也分别是二叉搜索树。
+* **特性：**
+  * 由于每个节点的值与其左右子树的关系，BST 具有有序性，可以通过中序遍历得到升序排列的节点值序列。
+  * 查找、插入和删除等操作在平均情况下具有较好的时间复杂度。
 
-class Solution {public List\<Integer> postorderTraversal(TreeNode root) {List\<Integer> result = new LinkedList<>();traverse(root, result);return result;}private void traverse(TreeNode root, List\<Integer> res) {if (root == null) {return;}traverse(root.left, res);traverse(root.right, res);res.add(root.val);\}}\
+#### 区别总结：
 
-
-5. 前序位置的代码只能从函数参数中获取父节点传递来的数据，而后序位置的代码不仅可以获取参数数据，还可以获取到子树通过函数返回值传递回来的数据。
-
-The code in the pre-order position can only obtain the data passed by the parent node from the function parameters, and the code in the post-order position can not only obtain the parameter data, but also the data passed back by the subtree through the function return value.\
-
-
-6. Reverse level order traversal:
-
-Solution 1:public List\<List\<Integer>> levelOrderBottom(TreeNode root) {List\<List\<Integer>> res = new LinkedList<>();Queue\<TreeNode> queue = new LinkedList<>();if (root == null) {return res;}queue.offer(root);while (!queue.isEmpty()) {int size = queue.size();List\<Integer> sub = new LinkedList<>();for (int i = 0; i < size; i++) {TreeNode cur = queue.poll();sub.add(cur.val);if (cur.left != null) {queue.offer(cur.left);}if (cur.right != null) {queue.offer(cur.right);\}}// add each level to the front of the result listres.add(0, sub);}return res;}Solution 2:public List\<List\<Integer>> levelOrderBottom(TreeNode root) {List\<List\<Integer>> res = new LinkedList<>();// Solution 2levelHelper(root, 0, res);Collections.reverse(res);return res;}private void levelHelper(TreeNode root, int depth, List\<List\<Integer>> res) {if (root == null) {return;}if (depth == res.size()) {res.add(new LinkedList\<Integer>());}res.get(depth).add(root.val);levelHelper(root.left, depth + 1, res);levelHelper(root.right, depth + 1, res);}\
+1. **有序性：**
+   * 二叉搜索树具有有序性，每个节点的值相对有序，而普通的二叉树没有这种性质。
+2. **查找操作：**
+   * 在二叉搜索树中，查找某个值的操作可以通过比较节点值的大小，从根节点开始递归向左或向右进行，以快速定位目标值。这是二叉搜索树的一个主要优势。
+   * 在普通二叉树中，查找操作需要遍历整个树，效率较低。
+3. **插入和删除操作：**
+   * 二叉搜索树对于插入和删除操作也能够保持有序性，通过调整节点的结构，使得树仍然保持搜索树的性质。
+   * 在普通二叉树中，插入和删除操作可能不会维持有序性，仅仅是简单地插入或删除节点。
+4. **性能：**
+   * 二叉搜索树在平均情况下具有较好的性能，但在最坏情况下可能退化成链表，导致性能下降。
+   * 普通二叉树没有排序的特性，性能可能较为一般，但不容易退化成链表。
