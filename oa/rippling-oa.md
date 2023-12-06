@@ -4,7 +4,7 @@ description: Rippling OA
 
 # Rippling OA
 
-<figure><img src="../.gitbook/assets/image (4).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% content-ref url="../coding/string/string-parsing/468.-validate-ip-address-medium.md" %}
 [468.-validate-ip-address-medium.md](../coding/string/string-parsing/468.-validate-ip-address-medium.md)
@@ -12,9 +12,9 @@ description: Rippling OA
 
 
 
-<figure><img src="../.gitbook/assets/image (6).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (5).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ```java
@@ -113,9 +113,9 @@ public class TVSeriesFetcher {
 
 
 
-<figure><img src="../.gitbook/assets/image (7).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (8).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ```java
