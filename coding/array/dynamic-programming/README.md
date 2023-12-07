@@ -107,7 +107,41 @@ int knapsack(int W, int N, int[] wt, int[] val) {
 
 </details>
 
+### 背包问题：
 
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+纯 0 - 1 背包 是求 给定背包容量 装满背包 的最大价值是多少。
+
+416\. 分割等和子集 是求 给定背包容量，能不能装满这个背包。&#x20;
+
+1049\. 最后一块石头的重量 II 是求 给定背包容量，尽可能装，最多能装多少&#x20;
+
+494\. 目标和 是求 给定背包容量，装满背包有多少种方法。&#x20;
+
+474\. Ones and Zeroes 是求 给定背包容量，装满背包最多有多少个物品。
+
+
+
+{% content-ref url="416.-partition-equal-subset-sum-medium.md" %}
+[416.-partition-equal-subset-sum-medium.md](416.-partition-equal-subset-sum-medium.md)
+{% endcontent-ref %}
+
+{% content-ref url="../backtracking/494.-target-sum-medium.md" %}
+[494.-target-sum-medium.md](../backtracking/494.-target-sum-medium.md)
+{% endcontent-ref %}
+
+{% content-ref url="../backtracking/698.-partition-to-k-equal-sum-subsets-medium.md" %}
+[698.-partition-to-k-equal-sum-subsets-medium.md](../backtracking/698.-partition-to-k-equal-sum-subsets-medium.md)
+{% endcontent-ref %}
+
+{% content-ref url="474.-ones-and-zeroes-medium.md" %}
+[474.-ones-and-zeroes-medium.md](474.-ones-and-zeroes-medium.md)
+{% endcontent-ref %}
+
+{% content-ref url="518.-coin-change-ii-medium.md" %}
+[518.-coin-change-ii-medium.md](518.-coin-change-ii-medium.md)
+{% endcontent-ref %}
 
 
 
