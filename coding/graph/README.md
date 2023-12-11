@@ -41,7 +41,21 @@ int[][] matrix;
 
 <figure><img src="../../.gitbook/assets/image (45).png" alt="" width="563"><figcaption></figcaption></figure>
 
-**在 `visited` 中被标记为 true 的节点用灰色表示，在 `onPath` 中被标记为 true 的节点用绿色表示**，类比贪吃蛇游戏，`visited` 记录蛇经过过的格子，而 `onPath` 仅仅记录蛇身。在图的遍历过程中，`onPath` 用于判断是否成环，类比当贪吃蛇自己咬到自己（成环）的场景，这下你可以理解它们二者的区别了吧。
+
+
+### Visited vs OnPath
+
+类比贪吃蛇游戏，**`visited`** 记录蛇经过过的格子，而 **`onPath`** 仅仅记录蛇身。在图的遍历过程中，`onPath` 用于判断是否成环，类比当贪吃蛇自己咬到自己（成环）的场景。
+
+**GIF 描述了递归遍历二叉树的过程，在 `visited` 中被标记为 true 的节点用灰色表示，在 `onPath` 中被标记为 true 的节点用绿色表示**。
+
+<figure><img src="../../.gitbook/assets/1 (1).gif" alt=""><figcaption></figcaption></figure>
+
+#### Q: Visited和OnPath的作用是否会重复？
+
+**A:** (1)**`visited`**减少计算量，如果碰到visited被标记为true，则说明前面已经对这个节点之后的样子做出判断了，无须再进行延伸，故可以减少很多的重复遍历。&#x20;
+
+(2)而 **`onPath`**数组代表的是当前递归遍历路径中已经被访问过的节点，如果 onPath\[i]==true，则说明在当前路径中已经有该节点，说明成环。
 
 ```java
 // 记录被遍历过的节点

@@ -1,0 +1,83 @@
+# Cycle Detection (DFS)
+
+### Visited vs OnPath
+
+类比贪吃蛇游戏，**`visited`** 记录蛇经过过的格子，而 **`onPath`** 仅仅记录蛇身。在图的遍历过程中，`onPath` 用于判断是否成环，类比当贪吃蛇自己咬到自己（成环）的场景。
+
+**GIF 描述了递归遍历二叉树的过程，在 `visited` 中被标记为 true 的节点用灰色表示，在 `onPath` 中被标记为 true 的节点用绿色表示**。
+
+<figure><img src="../../../../.gitbook/assets/1 (1).gif" alt=""><figcaption></figcaption></figure>
+
+#### Q: Visited和OnPath的作用是否会重复？
+
+**A:** (1)**`visited`**减少计算量，如果碰到visited被标记为true，则说明前面已经对这个节点之后的样子做出判断了，无须再进行延伸，故可以减少很多的重复遍历。&#x20;
+
+(2)而 **`onPath`**数组代表的是当前递归遍历路径中已经被访问过的节点，如果 onPath\[i]==true，则说明在当前路径中已经有该节点，说明成环。
+
+```java
+// 记录被遍历过的节点
+boolean[] visited;
+// 记录从起点到当前节点的路径
+boolean[] onPath;
+
+/* 图遍历框架 */
+void traverse(Graph graph, int s) {
+    if (visited[s]) return;
+    // 经过节点 s，标记为已遍历
+    visited[s] = true;
+    // 做选择：标记节点 s 在路径上
+    onPath[s] = true;
+    for (int neighbor : graph.neighbors(s)) {
+        traverse(graph, neighbor);
+    }
+    // 撤销选择：节点 s 离开路径
+    onPath[s] = false;
+}
+
+```
+
+这个 `onPath` 数组的操作很像前文 [回溯算法核心套路](https://labuladong.github.io/algo/di-ling-zh-bfe1b/hui-su-sua-c26da/) 中做「做选择」和「撤销选择」，区别在于位置：
+
+* 回溯算法的「做选择」和「撤销选择」在 for 循环里面;
+* 而DFS对 `onPath` 数组的操作在 for 循环外面。
+
+```java
+// DFS 算法，关注点在节点
+void traverse(TreeNode root) {
+    if (root == null) return;
+    printf("进入节点 %s", root);
+    for (TreeNode child : root.children) {
+        traverse(child);
+    }
+    printf("离开节点 %s", root);
+}
+
+// 回溯算法，关注点在树枝
+void backtrack(TreeNode root) {
+    if (root == null) return;
+    for (TreeNode child : root.children) {
+        // 做选择
+        printf("从 %s 到 %s", root, child);
+        backtrack(child);
+        // 撤销选择
+        printf("从 %s 到 %s", child, root);
+    }
+}
+
+```
+
+如果执行这段代码，你会发现根节点被漏掉了：
+
+```java
+void traverse(TreeNode root) {
+    if (root == null) return;
+    for (TreeNode child : root.children) {
+        printf("进入节点 %s", child);
+        traverse(child);
+        printf("离开节点 %s", child);
+    }
+}
+
+```
+
+所以对于这里「图」的遍历，我们应该用 DFS 算法，即把 `onPath` 的操作放到 for 循环外面，否则会漏掉记录起始点的遍历。
