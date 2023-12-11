@@ -109,7 +109,7 @@ int knapsack(int W, int N, int[] wt, int[] val) {
 
 ### 背包问题：
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 纯 0 - 1 背包 是求 给定背包容量 装满背包 的最大价值是多少。
 

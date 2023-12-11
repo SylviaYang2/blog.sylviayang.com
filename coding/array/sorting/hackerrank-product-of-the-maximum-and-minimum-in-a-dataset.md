@@ -1,8 +1,8 @@
 # (Hackerrank) Product of the Maximum and Minimum in a Dataset
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Since the 1 <= x\[i] <= 10^9, (10^9)^2 = 10^18 is significantly larger than the **`Integer.MAX_VALUE (2^31)`**, we are using **`Long`** to store our result
 
