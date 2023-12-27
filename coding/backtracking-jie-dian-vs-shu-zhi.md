@@ -12,7 +12,7 @@
 * 排列问题：N个数按一定规则全排列，有几种排列方式
 * 棋盘问题：N皇后，解数独等等
 
-<figure><img src="../.gitbook/assets/image (10).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 站在回溯树的一个节点上，你只需要思考 3 个问题：
 
@@ -42,7 +42,7 @@ backtracking这里自己调用自己，实现递归。
 
 从图中：**for循环可以理解是横向遍历，backtracking（递归）就是纵向遍历**，这样就把这棵树全遍历完了，一般来说，搜索叶子节点就是找的其中一个结果了。
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% content-ref url="array/backtracking/46.-permutations-medium.md" %}
 [46.-permutations-medium.md](array/backtracking/46.-permutations-medium.md)

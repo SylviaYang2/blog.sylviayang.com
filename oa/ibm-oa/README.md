@@ -4,7 +4,7 @@ description: OA
 
 # IBM OA
 
-<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```java
 int[] results = new int[queries.length];
@@ -36,9 +36,9 @@ return results;
 
 
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java
@@ -97,7 +97,7 @@ Make sure to replace the `baseFilename` with the actual file name you want to pr
 
 
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ````java
 ```java
@@ -142,7 +142,7 @@ public class Solution {
 
 
 
-<figure><img src="../../.gitbook/assets/image (7) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java
@@ -187,9 +187,9 @@ This program defines a `getSequenceSum` function that calculates the sequence su
 
 
 
-<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1) (1) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (9) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9) (1) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java
@@ -257,7 +257,7 @@ This Java program will process the log file given as an argument, count the numb
 
 
 
-<figure><img src="../../.gitbook/assets/image (10) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (10) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java
@@ -319,7 +319,7 @@ This approach ensures that the algorithm is efficient, running in O(√n) time c
 ````
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/image (32).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (32) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java
@@ -384,7 +384,7 @@ This method iterates through all possible insertion points, including before the
 
 
 
-<figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java
@@ -448,7 +448,7 @@ By the end of the target string, you will have the minimum number of flips neede
 
 
 
-<figure><img src="../../.gitbook/assets/image (34).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (34) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 <pre class="language-java" data-overflow="wrap"><code class="lang-java"><strong>```java
 </strong>import java.util.*;
@@ -530,9 +530,9 @@ For the worst-case scenario where each operation is a `push`, `n` could be as la
 
 
 
-<figure><img src="../../.gitbook/assets/image (35).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (35) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (36).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (36) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java
@@ -622,7 +622,7 @@ This code provides a structure but lacks the actual implementation of handling H
 
 
 
-<figure><img src="../../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java

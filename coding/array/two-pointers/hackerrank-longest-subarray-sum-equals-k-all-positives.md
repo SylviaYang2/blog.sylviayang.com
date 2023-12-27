@@ -1,6 +1,6 @@
 # (Hackerrank) Longest Subarray Sum Equals k (all positives)
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Approach 1: Two pointers - Sliding Window
 
@@ -10,7 +10,7 @@ The **left** pointer denotes the starting index of the subarray and the **right*
 
 But when the sum of the subarray crosses k, we will move the left pointer in the forward direction as well to **shrink** the size of the subarray as well as to decrease the sum. Thus, we will consider the length of the subarray whenever the sum becomes **equal** to k.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ````java
 ```java
