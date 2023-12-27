@@ -9,9 +9,9 @@ Trie is a rooted tree. Its nodes have the following fields:
 * **Note**: if not guaranteed all **lowercase**, then we use a **HashMap**\<Character, TrieNode> structure
 * Boolean field **`isEnd`** which specifies whether the node corresponds to the end of the key, or is just a key prefix.
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### Application:
 
