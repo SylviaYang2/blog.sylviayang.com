@@ -5,9 +5,7 @@
 > 入度 indegree：顶点的入度是指「指向该顶点的边」的数量；\
 > 出度 outdegree：顶点的出度是指该顶点指向其他点的边的数量。
 
-所以我们先执行入度为 0 的那些点，\
-那也就是要记录每个顶点的入度。\
-因为只有当它的 **`入度 = 0`** 的时候，我们才能执行它。
+我们先执行入度为 0 的那些点，只有当它的 **`入度 = 0`** 的时候，我们才能执行它。
 
 1、构建邻接表，和之前一样，边的方向表示「被依赖」关系。
 
@@ -78,8 +76,19 @@ public int[] findOrder(int numCourses, int[][] prerequisites) {
 }
 
 // 建图函数
-List<Integer>[] buildGraph(int n, int[][] edges) {
-    // 见前文
+List<Integer>[] buildGraph(int numCourses, int[][] prerequisites) {
+    // 图中共有 numCourses 个节点
+    List<Integer>[] graph = new LinkedList[numCourses];
+    for (int i = 0; i < numCourses; i++) {
+        graph[i] = new LinkedList<>();
+    }
+    for (int[] edge : prerequisites) {
+        int from = edge[1], to = edge[0];
+        // 添加一条从 from 指向 to 的有向边
+        // 边的方向是「被依赖」关系，即修完课程 from 才能修课程 to
+        graph[from].add(to);
+    }
+    return graph;
 }
 
 ```
