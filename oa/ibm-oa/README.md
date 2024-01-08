@@ -680,7 +680,7 @@ In this code:
 
 
 
-<figure><img src="../../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ````java
