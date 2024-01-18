@@ -2,7 +2,7 @@
 
 {% embed url="https://labuladong.github.io/algo/di-yi-zhan-da78c/shou-ba-sh-03a72/tu-lun-ji--d55b2/" %}
 
-<figure><img src="../../.gitbook/assets/image (43).png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (43) (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% code overflow="wrap" %}
 ```java
@@ -39,7 +39,7 @@ int[][] matrix;
 
 ### Undirected Weighted Graph
 
-<figure><img src="../../.gitbook/assets/image (45).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (45) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 
 

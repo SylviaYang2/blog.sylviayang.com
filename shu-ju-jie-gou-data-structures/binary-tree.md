@@ -2,15 +2,15 @@
 
 
 
-1. Binary Tree的第i层最多有2^(i-1)个节点；
-2. 深度为k的Binary Tree至多有2^k - 1个节点；
+1. Binary Tree的`第i层`最多有`2^(i-1)`个节点；
+2. 深度为`k`的Binary Tree至多有`2^k - 1`个节点；
 3.
 
-Full Binary Tree：深度为k，有2^k - 1个节点的树；除叶子节点外的所有节点都有两个子节点，节点数达到最大值；所有叶子节点在同一层上。
+**`Full`**` ``Binary Tree`：深度为`k`，有`2^k - 1`个节点的树；除叶子节点外的所有节点都有两个子节点，节点数达到最大值；所有叶子节点在同一层上。
 
 ![](<../.gitbook/assets/image (77).png>)
 
-Complete Binary Tree：若二叉树的深度为h，除第h层外，其他各层（1 ～ h-1）的节点数都达到最大个数，第h层所有的节点都连续集中在最左边
+**`Complete`**`Binary Tree`：若二叉树的深度为h，除第h层外，其他各层（1 ～ h-1）的节点数都达到最大个数，第h层所有的节点都连续集中在最左边
 
 ![](<../.gitbook/assets/image (109).png>)
 

@@ -2,7 +2,7 @@
 
 ## QuickSort:
 
-<figure><img src="../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
 
 Steps:
 
@@ -48,9 +48,9 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
 
 ### Optimization:
 
@@ -70,7 +70,7 @@ void shuffle(int[] nums) {
 
 
 
-<figure><img src="../../../.gitbook/assets/image (33).png" alt="" width="517"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (49).png" alt="" width="517"><figcaption></figcaption></figure>
 
 
 
@@ -80,7 +80,7 @@ Quickselect: (find the kth smallest / largest element)
 
 * The partition part is the same as that of quick sort
 
-<figure><img src="../../../.gitbook/assets/image (37).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53).png" alt="" width="563"><figcaption></figcaption></figure>
 
 ```java
 int pivot = partition(arr, start, end)

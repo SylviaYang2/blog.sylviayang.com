@@ -11,9 +11,9 @@
 1. Transpose the matrix
 2. Reverse Columns
 
-![](<../../../../.gitbook/assets/image (49) (1) (1).png>)![](<../../../../.gitbook/assets/image (50) (1) (1).png>)
+![](<../../../../.gitbook/assets/image (49) (1) (1) (1).png>)![](<../../../../.gitbook/assets/image (50) (1) (1) (1).png>)
 
-![](<../../../../.gitbook/assets/image (51) (1) (1).png>)
+![](<../../../../.gitbook/assets/image (51) (1) (1) (1).png>)
 
 ```java
 class Solution {

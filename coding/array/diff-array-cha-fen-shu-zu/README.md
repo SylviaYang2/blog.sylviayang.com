@@ -17,7 +17,7 @@ for (int i = 1; i < nums.length; i++) {
 }
 ```
 
-<figure><img src="../../../.gitbook/assets/image (52) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (52) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 由diff\[i]反推出nums\[i]：
 
@@ -30,7 +30,7 @@ for (int i = 1; i < diff.length; i++) {
 ]
 ```
 
-<figure><img src="../../../.gitbook/assets/image (53) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (53) (1) (1) (1).png" alt="" width="563"><figcaption></figcaption></figure>
 
 **这样构造差分数组 `diff`，就可以快速进行区间增减的操作**，如果我们想对区间 `nums[i..j]` 的元素全部加 3，那么只需要让 `diff[i] += 3`，然后再让 `diff[j+1] -= 3` 即可：
 
