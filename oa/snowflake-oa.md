@@ -16,9 +16,9 @@ Example:&#x20;
 >
 > The fourth call will start at time = 18, and last until time = 53.&#x20;
 >
-> The fifth call will start at time = 30, and last until time = 65. T
+> The fifth call will start at time = 30, and last until time = 65.
 >
-> he first call completely overlaps the second and third calls, and partially overlaps the fourth and fifth calls. Choosing calls that do not overlap, and answering the 2nd and 4th calls leads to the maximum total order volume of 51 + 25 = 76.&#x20;
+> The first call completely overlaps the second and third calls, and partially overlaps the fourth and fifth calls. Choosing calls that do not overlap, and answering the 2nd and 4th calls leads to the maximum total order volume of 51 + 25 = 76.&#x20;
 
 Function Description: Complete the function phoneCalls in the editor below.&#x20;
 
