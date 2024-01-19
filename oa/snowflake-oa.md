@@ -1,5 +1,233 @@
 # Snowflake OA
 
+### Maximum Order Volume&#x20;
+
+problem: During the day, a supermarket will receive calls from customers who want to place orders. The supermarket manager knows in advance the number of calls that will be attempted, the start time, duration, and order volume for each call. Only one call can be in progress at any one time, and if a call is not answered, the caller will not call back. The manager must choose which calls to service in order to maximize order volume. Determine the maximum order volume.&#x20;
+
+Example:&#x20;
+
+> start = \[10, 5, 15, 18, 30] duration = \[30, 12, 20, 35, 35] volume = \[50, 51, 20, 25, 10].
+>
+> The first call will start at time = 10, and last until time = 40.&#x20;
+>
+> The second call will start at time = 5, and last until time = 17.&#x20;
+>
+> The third call will start at time = 15, and last until time = 35.&#x20;
+>
+> The fourth call will start at time = 18, and last until time = 53.&#x20;
+>
+> The fifth call will start at time = 30, and last until time = 65. T
+>
+> he first call completely overlaps the second and third calls, and partially overlaps the fourth and fifth calls. Choosing calls that do not overlap, and answering the 2nd and 4th calls leads to the maximum total order volume of 51 + 25 = 76.&#x20;
+
+Function Description: Complete the function phoneCalls in the editor below.&#x20;
+
+phoneCalls has the following parameter(s): int start\[n]: the start times of each call int duration\[n]: the durations of each call int volume\[n]: the volumes of each order&#x20;
+
+Returns int: the maximum possible volume of orders that can be received
+
+Constraints • 1 ≤ n ≤ 10^5 • 1 ≤ start\[i] ≤ 10^9 • 1 ≤ duration\[i] ≤ 10^9 • 1 ≤ volume\[i] ≤ 10^3
+
+Sample test case 1:
+
+> start\[] = \[ 1, 2, 4 ] duration\[] = \[ 2, 2, 1 ] volume \[] = \[ 1, 2, 3 ]&#x20;
+>
+> Output: 4&#x20;
+>
+> Explanation: The calls happen in the intervals \[1,3] \[2,4] \[4,5]&#x20;
+>
+> The first and third calls together make up the order volume 4, and their intervals do not intersect. The first and second calls intersect, as do the second and third calls. Only one call from either of these pairs can be serviced. The most efficient calls to answer are the first and third, with a total volume of 4.
+
+Sample Case 2:&#x20;
+
+> start\[] = \[ 1,10,100 ], duration\[] = \[ 1, 10, 100 ] volume \[] = \[ 1, 10, 100 ]&#x20;
+>
+> Output: 111&#x20;
+>
+> Explanation: The calls happen in the following intervals - \[1,2] \[10, 20] \[100, 200]. All three calls can be attended. So the total volume is 1 + 10 + 100 = 111.
+
+#### Approach:
+
+1. Create a list of calls with their start time, end time (calculated as start time + duration), and volume.
+2. Sort this list based on **end** time.
+3. Use dynamic programming to find the maximum volume of non-overlapping calls.
+4.  For each call, we have two choices:
+
+    1. Include the call and add its volume to the total volume of the best sequence of calls that ended before this call started.
+    2. Exclude the call and carry forward the maximum volume found so far.
+
+    The dynamic programming table will store the maximum volume that can be achieved by considering calls up to the current one.
+
+{% code overflow="wrap" %}
+```java
+class Result {
+    /*
+     * Complete the 'phoneCalls' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY start
+     *  2. INTEGER_ARRAY duration
+     *  3. INTEGER_ARRAY volume
+     */
+
+    public static int phoneCalls(List<Integer> start, List<Integer> duration, List<Integer> volume) {
+        int n = start.size();
+        Call[] calls = new Call[n];
+
+        for (int i = 0; i < n; i++) {
+            calls[i] = new Call(start.get(i), duration.get(i), volume.get(i));
+        }
+
+        // Sort based on end time
+        Arrays.sort(calls);
+
+        int[] dp = new int[n];
+        dp[0] = calls[0].volume;
+
+        for (int i = 1; i < n; i++) {
+            int currVol = calls[i].volume;
+
+            for (int j = i - 1; j >= 0; j--) {
+                if (calls[j].end < calls[i].start) {
+                    currVol += dp[j];
+                    break;
+                }
+            }
+            dp[i] = Math.max(currVol, dp[i - 1]);
+        }
+        return dp[n - 1];
+    }
+    
+    static class Call implements Comparable<Call> {
+        int start;
+        int end;
+        int volume;
+
+        Call(int start, int duration, int volume) {
+            this.start = start;
+            this.end = start + duration;
+            this.volume = volume;
+        }
+
+        @Override
+        public int compareTo(Call other) {
+            return this.end - other.end;
+        }
+    }
+}
+```
+{% endcode %}
+
+
+
+
+
+### Array Reduction 4&#x20;
+
+The problem statement describes an algorithm to repeatedly modify an array and build a new array based on certain rules. Let's break down the problem statement for clarity:
+
+1. **Initial Setup**: You are given an array of integers, `arr`.
+2. **Process**:
+   * You repeatedly perform a series of steps until the original array, `arr`, becomes empty.
+   * In each iteration, you do the following:
+     * Choose a number `k` such that `1 ≤ k ≤ length of arr`.
+     * Calculate the MEX (Minimum Excludant) of the first `k` elements of `arr`. The MEX of a set of integers is the smallest non-negative integer that is not in the set. For example, `MEX({1,2,3}) = 0` and `MEX({0, 1,2,4,5}) = 3.`
+     * Append this MEX to another array, called `result`.
+     * Remove the first `k` elements from `arr`.
+3. **Objective**:
+   * Your goal is to choose `k` in each iteration in a way that makes the `result` array lexicographically maximum.
+   * An array `x` is lexicographically greater than an array `y` if, at the first position where they differ, the element in `x` is greater than the element in `y`, or if `x` is a prefix of `y` but longer in length.
+4. **Lexicographical Order**:
+   * Think of lexicographical order like dictionary order. For example, in lexicographical order, `5, 1` is greater than `1, 5`.
+
+> **Example 1**: Given n = 4, arr = \[0, 1, 1, 0], one of the optimal ways to make array result lexicographically maximum is as follows:&#x20;
+>
+> • Take k=2, the MEX of the 1st and 2nd element of arr is 2. So arr = \[1,0] and result = \[2].&#x20;
+>
+> • Take k= 2, the MEX of the 1st and 2nd element of arr is 2. So arr = \[] and result = \[2,2]. arr is now empty and the answer is \[2,2].&#x20;
+
+> Example 2: arr = \[2, 2, 3, 4, 0, 1, 2, 0]&#x20;
+>
+> Output: \[5,1]&#x20;
+>
+> Explanation: Given n = 8, arr = \[2,2,3,4,0, 1,2,0]&#x20;
+>
+> • Take k = 6, the MEX of the first 6 elements of arr is 5. So arr = \[2,0] and result =\[5].&#x20;
+>
+> • Take k = 2, the MEX of the 1st and 2nd element of arr is 1. So arr = \[] and result = \[5, 1].
+
+> Example 3: Input: \[0,1,2,3,4,6]&#x20;
+>
+> Output \[5,0]
+>
+> Explanation Given n = 6, arr = \[0,1,2,3,4,6] n = 6&#x20;
+>
+> • Take k = 5, the MEX of the first 5 elements of arr is 5. So arr = \[6] and result = \[5].&#x20;
+>
+> • Take k = 2, the MEX of the 1st element of arr is 0. So arr = \[] and result = \[5,0].
+
+To solve this problem, we need to design an algorithm that repeatedly finds the MEX (Minimum Excludant) of a subset of the array and removes that subset, in such a way as to maximize the lexicographical order of the resultant array.
+
+The key steps in the algorithm are:
+
+1. Find a segment of the array that maximizes the MEX.
+2. Append this MEX to the result array.
+3. Remove the segment from the original array.
+4. Repeat until the original array is empty.
+
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class ArrayReduction {
+
+    public static int[] getMaxArray(int[] arr) {
+        // Convert the array to a dynamic list structure like ArrayList
+        ArrayList<Integer> array = new ArrayList<>();
+        for (int value : arr) {
+            array.add(value);
+        }
+
+        ArrayList<Integer> result = new ArrayList<>();
+
+        while (!array.isEmpty()) {
+            int maxMex = -1;
+            int maxMexK = -1;
+
+            // Iterate over possible k values to find the maximal MEX
+            for (int k = 1; k <= array.size(); k++) {
+                int mex = findMex(array.subList(0, k));
+                if (mex > maxMex) {
+                    maxMex = mex;
+                    maxMexK = k;
+                }
+            }
+
+            result.add(maxMex);
+            // Remove the first maxMexK elements
+            for (int i = 0; i < maxMexK; i++) {
+                array.remove(0);
+            }
+        }
+
+        // Convert ArrayList to array
+        return result.stream().mapToInt(i -> i).toArray();
+    }
+
+    private static int findMex(List<Integer> subarray) {
+        Set<Integer> elements = new HashSet<>(subarray);
+        int mex = 0;
+        while (elements.contains(mex)) {
+            mex++;
+        }
+        return mex;
+    }
+}
+```
+
+
+
 ### Unequal Elements&#x20;
 
 The problem requires us to find the maximum length of a subsequence from the `skills` array such that there are at most `k` instances where consecutive elements in the subsequence are different. A subsequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.
@@ -22,7 +250,7 @@ int k: the maximum count of unequal adjacent elements.
 
 
 
-### **Dynamic Programming Approach**
+#### **Dynamic Programming Approach**
 
 We use a dynamic programming (DP) approach where `dp[i][j]` represents **the length** of the longest valid subsequence ending **at index `i` with `j` changes** (where a change is defined as an instance where two consecutive elements in the subsequence are different).
 
