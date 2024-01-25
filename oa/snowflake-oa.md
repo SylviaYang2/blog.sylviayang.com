@@ -348,27 +348,14 @@ Consider n= 12, s= "064819848398", m = 3, arr = \["088", "364", "07"]&#x20;
 
 The return array is \[7, 10, -1]. Note that only bolded characters are used to construct the strings.
 
-{% code overflow="wrap" %}
-```java
-import java.util.HashMap;
+<pre class="language-java" data-overflow="wrap"><code class="lang-java">import java.util.HashMap;
 import java.util.Map;
 
-public class SequentialString {
-    public static void main(String[] args) {
-        String s = "064819848398";
-        String[] arr = {"088", "364", "07"};
-        int[] result = minLengthForPermutationSequentialFromStart(s, arr);
-
-        // Print the result
-        for (int length : result) {
-            System.out.println(length);
-        }
-    }
-
-    private static int[] minLengthForPermutationSequentialFromStart(String s, String[] arr) {
+<strong>public class SequentialString {
+</strong>    private static int[] minLengthForPermutationSequentialFromStart(String s, String[] arr) {
         int[] result = new int[arr.length];
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i &#x3C; arr.length; i++) {
             result[i] = getMinLength(s, arr[i]);
         }
 
@@ -376,8 +363,8 @@ public class SequentialString {
     }
 
     private static int getMinLength(String s, String target) {
-        Map<Character, Integer> targetCount = new HashMap<>();
-        Map<Character, Integer> currentCount = new HashMap<>();
+        Map&#x3C;Character, Integer> targetCount = new HashMap&#x3C;>();
+        Map&#x3C;Character, Integer> currentCount = new HashMap&#x3C;>();
         for (char c : target.toCharArray()) {
             targetCount.put(c, targetCount.getOrDefault(c, 0) + 1);
             currentCount.put(c, 0);
@@ -386,10 +373,10 @@ public class SequentialString {
         int charNeeded = target.length();
         int right = 0;
 
-        while (right < s.length() && charNeeded > 0) {
+        while (right &#x3C; s.length() &#x26;&#x26; charNeeded > 0) {
             char c = s.charAt(right);
             if (currentCount.containsKey(c)) {
-                if (currentCount.get(c) < targetCount.get(c)) {
+                if (currentCount.get(c) &#x3C; targetCount.get(c)) {
                     charNeeded--;
                 }
                 currentCount.put(c, currentCount.get(c) + 1);
@@ -400,8 +387,7 @@ public class SequentialString {
         return charNeeded == 0 ? right : -1;
     }
 }
-```
-{% endcode %}
+</code></pre>
 
 
 
@@ -424,7 +410,6 @@ There are 412,776 possibilities
 {% code overflow="wrap" %}
 ```java
 public class UniqueWordsCalculator {
-
     private static final int TOTAL_VOWELS = 5;
     private static final int TOTAL_CONSONANTS = 21;
     private static final int MODULUS = 1000000007;
@@ -456,12 +441,6 @@ public class UniqueWordsCalculator {
 
         return (int)totalPossibilities;
     }
-
-    public static void main(String[] args) {
-        System.out.println("Unique words (wordLen = 4, maxVowels = 1): " + countWords(4, 1));
-        System.out.println("Unique words (wordLen = 1, maxVowels = 1): " + countWords(1, 1));
-        System.out.println("Unique words (wordLen = 2, maxVowels = 1): " + countWords(2, 1));
-    }
 }
 ```
 {% endcode %}
@@ -470,17 +449,42 @@ public class UniqueWordsCalculator {
 
 ### Smallest Set Covering Intervals&#x20;
 
-Given a series of integer intervals, determine the size of the smallest set that contains at least 2 integers within each interval.&#x20;
+Given an array **arr\[]** consisting of **N** ranges of the form **\[L, R],** the task is to determine the size of the smallest set that contains at least **2** integers within each interval.
 
-Example : first = \[0, 1, 2], last = \[2, 3, 3].
+**Examples:**
 
-The intervals start at first\[i] and end at last\[i].&#x20;
+> **Input:** arr\[] = { {1, 3}, {2, 5}, {1, 4} }\
+> **Output:** 2\
+> **Explanation:** Interval \[1, 3] contains the numbers 1, 2, 3.\
+> Interval \[2, 5] contains the numbers 2, 3, 4, 5.\
+> Interval \[1, 4] contains the numbers 1, 2, 3, 4.\
+> Selecting set {2, 3} would be the smallest set covering all intervals. &#x20;
+>
+> **Input:** arr\[] = { {3, 6}, {2, 4}, {0, 2}, {4, 7} }\
+> **Output:** 4\
+> **Explanation:** {3, 6}, {2, 4}, {0, 2}, {4, 7} contains:
+>
+> {3, 6} contains 3, 4, 5, 6; {2, 4} contains 2, 3, 4; {0, 2} contains 0, 1, 2; {4, 7} contains 4, 5, 6, 7
+>
+> Possible Sets are&#x20;
+>
+> * \[0, 2], \[4, 5] = 5
+> * \[1, 2], \[4, 5] = 4
+> * \[0, 2], \[4, 6] = 6
+> * \[1, 2], \[4, 6] = 5
+>
+> Optimum answer is 4 from 2nd set.
 
-Both intervals 0 and 1 contain 1 and 2. These are the only two integers that interval 0 shares, so both integers must be included in the answer set. Both intervals 1 and 2 contain 2 and 3. These are the only two values that interval 2 shares. The smallest set that contains at least 2 integers from each interval is {1, 2, 3}.&#x20;
+**Function Description**: Complete the function interval. interval has the following parameter: int first\[n]: each element represents the start of interval\[i], int last\[n]: each element represents the end of interval\[i].
 
-Function Description: Complete the function interval. interval has the following parameter: int first\[n]: each element represents the start of interval\[i], int last\[n]: each element represents the end of interval\[i].
+**Returns**: int: the size of the smallest interval possible
 
-Returns: int: the size of the smallest interval possible
+**Approach:** To solve the problem follow the below idea:
+
+> * Sort the array according to their endpoint in ascending order, AND if two intervals have the same end, sort them according to their start point in descending order.
+> * If there is no number in this interval being chosen before, we pick up the 2 biggest number in this interval (the biggest number have the most possibility to be used by the next interval).
+> * If there is one number in this interval being chosen before, we pick up the biggest number in this interval.
+> * If there are already two numbers in this interval being chosen before, we can skip this interval since the requirement has been fulfilled.
 
 ```java
 import java.util.*;
@@ -499,9 +503,7 @@ class GFG {
         }
     }
  
-    public static int
-    intersectionSizeTwo(List<List<Integer> > intervals)
-    {
+    public static intintersectionSizeTwo(List<List<Integer> > intervals) {
         int n = intervals.size();
  
         // Sort the array
@@ -514,7 +516,6 @@ class GFG {
         res.add(intervals.get(0).get(1));
  
         for (int i = 1; i < n; i++) {
- 
             int start = intervals.get(i).get(0);
             int end = intervals.get(i).get(1);
  
@@ -526,7 +527,7 @@ class GFG {
                 res.add(end);
             }
  
-            // Atleast 1 value from current
+            // At least 1 value from current
             // interval matches with previous
             // sets just add 1 max value
             else if (start > res.get(res.size() - 2)) {
@@ -534,18 +535,6 @@ class GFG {
             }
         }
         return res.size();
-    }
- 
-    // Driver Code
-    public static void main(String[] args)
-    {
-        // ranges
-        List<List<Integer> > range = Arrays.asList(
-            Arrays.asList(3, 6), Arrays.asList(2, 4),
-            Arrays.asList(0, 2), Arrays.asList(4, 7));
- 
-        // Function Call
-        System.out.println(intersectionSizeTwo(range));
     }
 }
 ```
@@ -597,17 +586,8 @@ class GFG {
         }
         return res.size();
     }
-
-    // Test the function with example
-    public static void main(String[] args) {
-        int[] first = {0, 1, 2};
-        int[] last = {2, 3, 3};
-        System.out.println("Size of the smallest interval possible: " + interval(first, last));
-    }
 }
 ```
-
-This code first creates a list of intervals from your `first` and `last` arrays. It then sorts these intervals and iterates over them, adding the necessary integers to a set to ensure that each interval contains at least two of these integers. Finally, it returns the size of this set.
 
 
 
@@ -662,14 +642,21 @@ A palindrome, a subsequence and a score are defined as follows:&#x20;
 
 Given a string of characters s, calculate its score using the formula above.&#x20;
 
-Example: s = "attract"&#x20;
+> Example: s = "attract"&#x20;
+>
+> • The Palindromic subsequences are \[a, t, r, c, aa, tt, ata, ara, ttt, trt, tat, tct, atta].&#x20;
+>
+> • The two non-overlapping palindromic subsequences with the maximum score are "atta", |atta| =4 and |c| or |t| = 1, 4 x 1 = 4.&#x20;
+>
+> • Note that the subsequence "atta" overlaps the subsequence r, so only one of them be chosen.
 
-• The Palindromic subsequences are \[a, t, r, c, aa, tt, ata, ara, ttt, trt, tat, tct, atta].&#x20;
+#### Approach: DP
 
-• The two non-overlapping palindromic subsequences with the maximum score are "atta", |atta| =4 and |c| or |t| = 1, 4 x 1 = 4.&#x20;
+Traverse the dp table to find out the length of **longest palindromic subsequences** using bottom up approach, then you can calculate the max product by multiplying dp\[i]\[j] with dp\[j+1]\[n-1].
 
-• Note that the subsequence "atta" overlaps the subsequence r, so only one of them be chosen.
+`dp[i][j]` represents the length of the longest palindromic subsequence in the substring from index i to j. The diagonal elements dp\[i]\[i] are initialized to 1, as a single character is a palindrome by itself.
 
+{% code overflow="wrap" %}
 ```java
 public static int longestPalindromicSubsequenceProduct(String x) {
       int n = x.length();
@@ -679,20 +666,26 @@ public static int longestPalindromicSubsequenceProduct(String x) {
           dp[i][i] = 1;
       }
 
+// iterates over all possible substring lengths k (from 1 to n-1) and all possible starting indices i.
       for (int k = 1; k < n; k++) {
           for (int i = 0; i < n - k; i++) {
+              // the length of the palindromic subsequence in the substring from i to i+k (j = i + k).
               int j = i + k;
               if (x.charAt(i) == x.charAt(j)) {
+                  // the characters at indices i and j can be included in the palindromic subsequence.
                   dp[i][j] = 2 + dp[i + 1][j - 1];
               } else {
+                  // chooses the maximum length from the previous substring
                   dp[i][j] = Math.max(dp[i][j - 1], dp[i + 1][j]);
               }
           }
       }
 
       int maxProd = 0;
+      // iterates over all pairs of indices (i, j) such that i < j < n.
       for (int i = 0; i < n; i++) {
           for (int j = 0; j < n - 1; j++) {
+              // calculates the product of lengths of two non-overlapping palindromic subsequences:
               maxProd = Math.max(maxProd, dp[i][j] * dp[j + 1][n - 1]);
           }
       }
@@ -700,4 +693,5 @@ public static int longestPalindromicSubsequenceProduct(String x) {
       return maxProd;
   }
 ```
+{% endcode %}
 

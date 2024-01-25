@@ -2,17 +2,17 @@
 
 * [Sylvia's LeetCode Notes](README.md)
 
-## 数据结构 Data Structures
+## Data Structures
 
-* [Intro](shu-ju-jie-gou-data-structures/intro.md)
-* [String](数据结构-data-structures/page-1.md)
-* [Array](shu-ju-jie-gou-data-structures/array.md)
-* [LinkedList](shu-ju-jie-gou-data-structures/linkedlist.md)
-* [Deque/Stack/Queue](shu-ju-jie-gou-data-structures/deque-stack-queue.md)
-* [Binary Tree](shu-ju-jie-gou-data-structures/binary-tree.md)
-* [Heap](shu-ju-jie-gou-data-structures/heap.md)
-* [Map](shu-ju-jie-gou-data-structures/map.md)
-* [Graph](shu-ju-jie-gou-data-structures/graph.md)
+* [Intro](data-structures/intro.md)
+* [String](data-structures/page-1.md)
+* [Array](data-structures/array.md)
+* [LinkedList](data-structures/linkedlist.md)
+* [Deque/Stack/Queue](data-structures/deque-stack-queue.md)
+* [Binary Tree](data-structures/binary-tree.md)
+* [Heap](data-structures/heap.md)
+* [Map](data-structures/map.md)
+* [Graph](data-structures/graph.md)
 
 ## Coding
 
@@ -140,7 +140,6 @@
   * [1381. Design a Stack With Increment Operation (Medium)](coding/stack/1381.-design-a-stack-with-increment-operation-medium.md)
 * [Array](coding/array/README.md)
   * [Sliding Window](coding/array/sliding-window/README.md)
-    * [121. Best Time to Buy and Sell Stock (Easy)](coding/array/sliding-window/121.-best-time-to-buy-and-sell-stock-easy.md)
     * [239. Sliding Window Maximum (Hard)](coding/array/sliding-window/239.-sliding-window-maximum-hard.md)
     * [Subarray Sum Equals Target (达摩院面试)](coding/array/sliding-window/subarray-sum-equals-target-da-mo-yuan-mian-shi.md)
     * [Longest sub-array with the same elements after removing <= k elements (Patreon OA)](coding/array/sliding-window/longest-sub-array-with-the-same-elements-after-removing-less-than-k-elements-patreon-oa.md)
@@ -176,10 +175,17 @@
     * [154. Find Minimum in Rotated Sorted Array II (Hard)](coding/array/binary-search/154.-find-minimum-in-rotated-sorted-array-ii-hard.md)
     * [162. Find Peak Element (Medium)](coding/array/binary-search/162.-find-peak-element-medium.md)
   * [Dynamic Programming](coding/array/dynamic-programming/README.md)
+    * [Stock Problems](coding/array/dynamic-programming/stock-problems.md)
     * [53. Maximum Subarray (Medium)](coding/array/dynamic-programming/53.-maximum-subarray-medium.md)
     * [62. Unique Paths](coding/array/dynamic-programming/62.-unique-paths.md)
     * [63. Unique Paths II](coding/array/dynamic-programming/63.-unique-paths-ii.md)
     * [70. Climbing Stairs (Easy)](coding/array/dynamic-programming/70.-climbing-stairs-easy.md)
+    * [121. Best Time to Buy and Sell Stock (Easy)](coding/array/dynamic-programming/121.-best-time-to-buy-and-sell-stock-easy.md)
+    * [122. Best Time to Buy and Sell Stock II (Medium)](coding/array/dynamic-programming/122.-best-time-to-buy-and-sell-stock-ii-medium.md)
+    * [123. Best Time to Buy and Sell Stock III (Medium)](coding/array/dynamic-programming/123.-best-time-to-buy-and-sell-stock-iii-medium.md)
+    * [188. Best Time to Buy and Sell Stock IV (Hard)](coding/array/dynamic-programming/188.-best-time-to-buy-and-sell-stock-iv-hard.md)
+    * [309. Best Time to Buy and Sell Stock with Cooldown (Medium)](coding/array/dynamic-programming/309.-best-time-to-buy-and-sell-stock-with-cooldown-medium.md)
+    * [714. Best Time to Buy and Sell Stock with Transaction Fee (Medium)](coding/array/dynamic-programming/714.-best-time-to-buy-and-sell-stock-with-transaction-fee-medium.md)
     * [198. House Robber (Medium)](coding/array/dynamic-programming/198.-house-robber-medium.md)
     * [213. House Robber II (Medium)](coding/array/dynamic-programming/213.-house-robber-ii-medium.md)
     * [337. House Robber III (Medium)](coding/array/dynamic-programming/337.-house-robber-iii-medium.md)
@@ -191,6 +197,7 @@
     * [740. Delete and Earn](coding/array/dynamic-programming/740.-delete-and-earn.md)
     * [746. Min Cost Climbing Stairs (Easy)](coding/array/dynamic-programming/746.-min-cost-climbing-stairs-easy.md)
     * [1143. Longest Common Subsequence (Medium)](coding/array/dynamic-programming/1143.-longest-common-subsequence-medium.md)
+    * [2742. Painting the Walls (Hard)](coding/array/dynamic-programming/2742.-painting-the-walls-hard.md)
     * [2771. Longest Non-decreasing Subarray From Two Arrays](coding/array/dynamic-programming/2771.-longest-non-decreasing-subarray-from-two-arrays.md)
   * [BackTracking](coding/array/backtracking/README.md)
     * [37. Sudoku Solver (Hard)](coding/array/backtracking/37.-sudoku-solver-hard.md)
@@ -261,8 +268,6 @@
 * [QuickSort](coding/quicksort.md)
 * [Parentheses Problems](coding/parentheses-problems.md)
 
-## Meta/Facebook
-
 ## OA
 
 * [Optiver OA](oa/optiver-oa.md)
@@ -279,3 +284,4 @@
 * [Rippling OA](oa/rippling-oa.md)
 * [Niantic OA](oa/niantic-oa.md)
 * [Snowflake OA](oa/snowflake-oa.md)
+* [PureStorage OA](oa/purestorage-oa.md)
