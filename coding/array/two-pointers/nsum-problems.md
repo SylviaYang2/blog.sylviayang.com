@@ -16,6 +16,10 @@
 [167.-two-sum-ii-input-array-is-sorted-medium.md](167.-two-sum-ii-input-array-is-sorted-medium.md)
 {% endcontent-ref %}
 
+{% content-ref url="259.-3sum-smaller-medium.md" %}
+[259.-3sum-smaller-medium.md](259.-3sum-smaller-medium.md)
+{% endcontent-ref %}
+
 {% content-ref url="1099.-two-sum-less-than-k.md" %}
 [1099.-two-sum-less-than-k.md](1099.-two-sum-less-than-k.md)
 {% endcontent-ref %}
